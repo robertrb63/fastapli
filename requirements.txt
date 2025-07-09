@@ -3,4 +3,5 @@ passlib
 python-jose
 pymongo
 python-multipart
+pydantic
 uvicorn
