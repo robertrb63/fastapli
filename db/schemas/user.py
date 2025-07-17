@@ -1,22 +1,22 @@
-def user_schema(user)-> dict:
+def user_schema(user) -> dict:
     return {
-        "id": str(user["_id"]),
-        "nombre": user["nombre"],
-        "telefono": user["telefono"],
-        "email": user["email"],
-        "poblacion": user["poblacion"],
-        "grupo_parroquial": user["grupo_parroquial"],
-        "unidad": user["unidad"],
-        "moderador": user["moderador"],
-        "tel_moderador": user["tel_moderador"],
-        "arciprestazgo": user["arciprestazgo"],
-        "arcipreste": user["arcipreste"],
-        "tel_arciprestazgo": user["tel_arciprestazgo"],
-        "moderador": user["moderador"],
-        "animador": user["animador"],
-        "tel_animador": user["tel_animador"]
+        "id": str(user.get("_id", "")),
+        "nombre": user.get("nombre", ""),
+        "telefono": user.get("telefono", ""),
+        "email": user.get("email", ""),
+        "poblacion": user.get("poblacion", ""),
+        "grupo_parroquial": user.get("grupo_parroquial", ""),
+        "unidad": user.get("unidad", ""),
+        "moderador": user.get("moderador", ""),
+        "tel_moderador": user.get("tel_moderador", ""),
+        "arciprestazgo": user.get("arciprestazgo", ""),
+        "arcipreste": user.get("arcipreste", ""),
+        "tel_arciprestazgo": user.get("tel_arciprestazgo", ""),
+        "animador": user.get("animador", ""),
+        "tel_animador": user.get("tel_animador", "")
     }
     
     
     def users_schema(users: list) -> list:
         return [user_schema(user) for user in users]
+      return [user_schema(user) for user in users]
