@@ -6,3 +6,6 @@ python-multipart
 pydantic
 uvicorn
 bson
+python-jose
+python-multipart
+bcrypt
