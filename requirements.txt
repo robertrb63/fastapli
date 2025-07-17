@@ -9,3 +9,4 @@ bson
 python-jose
 python-multipart
 bcrypt
+pydantic[email]
