@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from routes import products, users, jwt_auth_users, users_db, users_db_copy
 from fastapi.staticfiles import StaticFiles
+import os
+import uvicorn
+
+
 
 app = FastAPI()
 
@@ -30,3 +34,12 @@ async def root():
 @app.get("/url")
 async def root():
     return {"email": "restrepo.roberto@gmail.com"}
+
+
+# Tu lógica de rutas aquí...
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+
