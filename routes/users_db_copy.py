@@ -3,6 +3,11 @@ from db.models.users import User
 from db.schemas.user import user_schema
 from db.client import db_client
 from bson import ObjectId
+from fastapi import FastAPI
+
+app = FastAPI()
+
+# 👇 Middleware de CORS
 
 router = APIRouter(
     prefix="/usersdb",
@@ -31,6 +36,7 @@ async def get_user(id: str):
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
 
     return user_schema(user)
+
 
 # ➕ Crear nuevo usuario
 @router.post("/")
